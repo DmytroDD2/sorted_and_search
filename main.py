@@ -8,19 +8,17 @@ shuffle(shuffle_list)
 
 def buble_sort(num_list: list):
 
-    operations = len(num_list) ** 2
-    index_num = len(num_list) - 1
+    operations = len(num_list) - 1
 
-    while operations != 0:
-        if index_num == 0:
-            index_num = len(num_list) - 1
-        if num_list[index_num] > num_list[index_num - 1]:
-            num_list[index_num], num_list[index_num - 1] = num_list[index_num - 1], num_list[index_num]
-        operations -= 1
-        index_num -= 1
-
+    for i in range(operations):
+        for y in range(operations - i):
+            if num_list[y] > num_list[y + 1]:
+                num_list[y], num_list[y + 1] = num_list[y + 1], num_list[y]
     else:
+
         return num_list
+
+
 
 
 def insertion_sort(num_list: list):
@@ -67,6 +65,6 @@ def binary_search(numm):
 
 
 print(f' Buble sorted:\n {buble_sort(shuffle_list)}\n{"=" * 150}')
-print(f' Insertion sorted:\n {insertion_sort(shuffle_list)}\n{"=" * 150}')
-print(f' Binary_search: {binary_search(30)}\n{"=" * 150}')
+# print(f' Insertion sorted:\n {insertion_sort(shuffle_list)}\n{"=" * 150}')
+# print(f' Binary_search: {binary_search(30)}\n{"=" * 150}')
 
